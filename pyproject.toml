@@ -1,10 +1,11 @@
 [tool.poetry]
-name = "opentelemetry-instrumentation-jobs"
-version = "0.1.0"
+name = "opentelemetry-python-instrumentation-jobs"
+version = "0.2.0"
 description = ""
 authors = ["Vano Atabegashvili <vano.atabegashvili@gmail.com>"]
 readme = "README.md"
 license = "MIT"
+packages = [{include = "opentelemetry_python_instrumentation_jobs"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -14,9 +15,11 @@ opentelemetry-instrumentation-logging="0.49b1"
 opentelemetry-api="1.28.1"
 tqdm = "4.67.0"
 
-[tool.poetry.group.dev.dependencies]
+[tool.poetry.group.test.dependencies]
 pytest = "^8.3.3"
+schedule = "^1.2.2"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
