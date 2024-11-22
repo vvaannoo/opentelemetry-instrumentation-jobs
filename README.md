@@ -54,6 +54,16 @@ def job_1(*args, **kwargs):
 - `OTEL_EXPORTER_OTLP_INSECURE` (boolean): Whether to use insecure connection
 - `SENDING_LOGS_AND_METRICS_ENABLED` (boolean): Whether to send logs and metrics
 - `OTEL_EXPORT_INTERVAL` (int): The interval in milliseconds at which to export metrics
+- `METRIC_PREFIX` (string): The prefix of the metrics
+
+example
+```dotenv
+OTEL_SERVICE_NAME=test-service
+OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317
+OTEL_EXPORTER_OTLP_INSECURE=true
+SENDING_LOGS_AND_METRICS_ENABLED=true
+METRIC_PREFIX=test
+```
 
 ## Full example
 
