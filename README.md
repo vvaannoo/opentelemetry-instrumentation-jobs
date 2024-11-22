@@ -87,12 +87,12 @@ while True:
 
 ## Metrics that are sent
 
-- `test_job_run_count` (counter): How many times the job has been run
-- `test_job_status` (counter): Job counter by status (success, error)
-- `test_job_duration` (gauge): Job execution duration in seconds
-- `test_job_records` (gauge): Number of records in job (processed, total)
-- `test_job_last_status` (gauge): Last job status (1, 0)
-- `test_job_time` (gauge): Job start and finish time in unix timestamp (started, finished)
+- `${METRIC_PREFIX}_job_run_count` (counter): How many times the job has been run
+- `${METRIC_PREFIX}_job_status` (counter): Job counter by status (success, error)
+- `${METRIC_PREFIX}_job_duration` (gauge): Job execution duration in seconds
+- `${METRIC_PREFIX}_job_records` (gauge): Number of records in job (processed, total)
+- `${METRIC_PREFIX}_job_last_status` (gauge): Last job status (1, 0)
+- `${METRIC_PREFIX}_job_time` (gauge): Job start and finish time in unix timestamp (started, finished)
 
 
 ### License

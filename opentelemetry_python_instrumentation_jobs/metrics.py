@@ -21,6 +21,7 @@ SENDING_METRICS_ENABLED = os.getenv('SENDING_LOGS_AND_METRICS_ENABLED', 'false')
 
 SERVICE_NAME = os.getenv('OTEL_SERVICE_NAME')
 EXPORT_INTERVAL = int(os.getenv('OTEL_EXPORT_INTERVAL', '5000'))
+METRIC_PREFIX = os.getenv('METRIC_PREFIX', 'test')
 if SERVICE_NAME is None:
     raise Exception("OTEL_SERVICE_NAME is not set")
 print(SERVICE_NAME)
@@ -37,27 +38,27 @@ metrics.set_meter_provider(MeterProvider(metric_readers=[reader], resource=resou
 meter = metrics.get_meter("job-metrics")
 
 job_counter = meter.create_counter(
-    name="test_job_run_count",
+    name=f"{METRIC_PREFIX}_job_run_count",
     description="How many times the job has been run", unit="{count}"
 )
 status_counter = meter.create_counter(
-    name="test_job_status",
+    name=f"{METRIC_PREFIX}_job_status",
     description="Job counter by status (success, error)", unit="{count}",
 )
 duration_gauge = meter.create_gauge(
-    name="test_job_duration",
+    name=f"{METRIC_PREFIX}_job_duration",
     description="Job execution duration in seconds", unit="s"
 )
 records_gauge = meter.create_gauge(
-    name="test_job_records",
+    name=f"{METRIC_PREFIX}_job_records",
     description="Number of records in job (processed, total)", unit="{count}"
 )
 last_status_gauge = meter.create_gauge(
-    name="test_job_last_status",
+    name=f"{METRIC_PREFIX}_job_last_status",
     description="Last job status (1, 0)", unit="{status}"
 )
 job_time_gauge = meter.create_gauge(
-    name="test_job_time",
+    name=f"{METRIC_PREFIX}_job_time",
     description="Job start and finish time in unix timestamp (started, finished)", unit="s"
 )
 

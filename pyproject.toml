@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "opentelemetry-python-instrumentation-jobs"
-version = "0.3.0"
+version = "0.3.1"
 description = ""
 authors = ["Vano Atabegashvili <vano.atabegashvili@gmail.com>"]
 readme = "README.md"
